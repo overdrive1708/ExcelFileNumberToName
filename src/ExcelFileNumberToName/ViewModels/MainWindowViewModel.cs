@@ -4,7 +4,13 @@ namespace ExcelFileNumberToName.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "Prism Application";
+        //--------------------------------------------------
+        // バインディングデータ
+        //--------------------------------------------------
+        /// <summary>
+        /// タイトル
+        /// </summary>
+        private string _title = Resources.Strings.ApplicationName;
         public string Title
         {
             get { return _title; }
