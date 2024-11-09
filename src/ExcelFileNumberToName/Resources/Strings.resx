@@ -100,4 +100,12 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>ExcelFileNumberToName</value>
   </data>
+  <data name="ImportantNotice" xml:space="preserve">
+    <value>重要なお知らせ</value>
+  </data>
+  <data name="MessageFatalError" xml:space="preserve">
+    <value>致命的なエラーが発生しました｡
+このアプリケーションを終了します｡
+エラーの詳細な情報を表示しますか?</value>
+  </data>
 </root>
