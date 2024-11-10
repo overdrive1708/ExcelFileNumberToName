@@ -70,11 +70,101 @@ namespace ExcelFileNumberToName.Resources {
         }
         
         /// <summary>
+        ///   セル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Cell {
+            get {
+                return ResourceManager.GetString("Cell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査ファイルクリア に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ClearExaminationFile {
+            get {
+                return ResourceManager.GetString("ClearExaminationFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査ファイル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationFile {
+            get {
+                return ResourceManager.GetString("ExaminationFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査ファイルキーワード に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationFileKeyword {
+            get {
+                return ResourceManager.GetString("ExaminationFileKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査結果 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationResult {
+            get {
+                return ResourceManager.GetString("ExaminationResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査設定 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationSetting {
+            get {
+                return ResourceManager.GetString("ExaminationSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査対象 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationTarget {
+            get {
+                return ResourceManager.GetString("ExaminationTarget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteExamination {
+            get {
+                return ResourceManager.GetString("ExecuteExamination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ファイル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string File {
+            get {
+                return ResourceManager.GetString("File", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   重要なお知らせ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ImportantNotice {
             get {
                 return ResourceManager.GetString("ImportantNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   メモ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Memo {
+            get {
+                return ResourceManager.GetString("Memo", resourceCulture);
             }
         }
         
@@ -86,6 +176,62 @@ namespace ExcelFileNumberToName.Resources {
         public static string MessageFatalError {
             get {
                 return ResourceManager.GetString("MessageFatalError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査したいファイル　もしくは　調査したいファイルが含まれるフォルダを
+        ///ドラッグ&amp;ドロップしてください｡
+        ///調査ファイルキーワードを含むファイルのみ調査ファイルに登録されます｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageGuideDragAndDrop {
+            get {
+                return ResourceManager.GetString("MessageGuideDragAndDrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   このアプリケーションのプロジェクトURLを開く に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageOpenProjectUrl {
+            get {
+                return ResourceManager.GetString("MessageOpenProjectUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   名称 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   数値 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Number {
+            get {
+                return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   プリセット に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Preset {
+            get {
+                return ResourceManager.GetString("Preset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   シート に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Sheet {
+            get {
+                return ResourceManager.GetString("Sheet", resourceCulture);
             }
         }
     }

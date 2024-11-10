@@ -108,4 +108,54 @@
 このアプリケーションを終了します｡
 エラーの詳細な情報を表示しますか?</value>
   </data>
+  <data name="ExaminationSetting" xml:space="preserve">
+    <value>調査設定</value>
+  </data>
+  <data name="Preset" xml:space="preserve">
+    <value>プリセット</value>
+  </data>
+  <data name="ExaminationFileKeyword" xml:space="preserve">
+    <value>調査ファイルキーワード</value>
+  </data>
+  <data name="ExaminationTarget" xml:space="preserve">
+    <value>調査対象</value>
+  </data>
+  <data name="Sheet" xml:space="preserve">
+    <value>シート</value>
+  </data>
+  <data name="Cell" xml:space="preserve">
+    <value>セル</value>
+  </data>
+  <data name="Memo" xml:space="preserve">
+    <value>メモ</value>
+  </data>
+  <data name="ExaminationFile" xml:space="preserve">
+    <value>調査ファイル</value>
+  </data>
+  <data name="MessageGuideDragAndDrop" xml:space="preserve">
+    <value>調査したいファイル　もしくは　調査したいファイルが含まれるフォルダを
+ドラッグ&amp;ドロップしてください｡
+調査ファイルキーワードを含むファイルのみ調査ファイルに登録されます｡</value>
+  </data>
+  <data name="ClearExaminationFile" xml:space="preserve">
+    <value>調査ファイルクリア</value>
+  </data>
+  <data name="ExecuteExamination" xml:space="preserve">
+    <value>調査実施</value>
+  </data>
+  <data name="ExaminationResult" xml:space="preserve">
+    <value>調査結果</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>数値</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="MessageOpenProjectUrl" xml:space="preserve">
+    <value>このアプリケーションのプロジェクトURLを開く</value>
+  </data>
 </root>
