@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>ExcelFileNumberToName</value>
+  </data>
+  <data name="ImportantNotice" xml:space="preserve">
+    <value>重要なお知らせ</value>
+  </data>
+  <data name="MessageFatalError" xml:space="preserve">
+    <value>致命的なエラーが発生しました｡
+このアプリケーションを終了します｡
+エラーの詳細な情報を表示しますか?</value>
+  </data>
+  <data name="ExaminationSetting" xml:space="preserve">
+    <value>調査設定</value>
+  </data>
+  <data name="Preset" xml:space="preserve">
+    <value>プリセット</value>
+  </data>
+  <data name="ExaminationFileKeyword" xml:space="preserve">
+    <value>調査ファイルキーワード</value>
+  </data>
+  <data name="ExaminationTarget" xml:space="preserve">
+    <value>調査対象</value>
+  </data>
+  <data name="Sheet" xml:space="preserve">
+    <value>シート</value>
+  </data>
+  <data name="Cell" xml:space="preserve">
+    <value>セル</value>
+  </data>
+  <data name="Memo" xml:space="preserve">
+    <value>メモ</value>
+  </data>
+  <data name="ExaminationFile" xml:space="preserve">
+    <value>調査ファイル</value>
+  </data>
+  <data name="MessageGuideDragAndDrop" xml:space="preserve">
+    <value>調査したいファイル　もしくは　調査したいファイルが含まれるフォルダを
+ドラッグ&amp;ドロップしてください｡
+調査ファイルキーワードを含むファイルのみ調査ファイルに登録されます｡</value>
+  </data>
+  <data name="ClearExaminationFile" xml:space="preserve">
+    <value>調査ファイルクリア</value>
+  </data>
+  <data name="ExecuteExamination" xml:space="preserve">
+    <value>調査実施</value>
+  </data>
+  <data name="ExaminationResult" xml:space="preserve">
+    <value>調査結果</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>数値</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="MessageOpenProjectUrl" xml:space="preserve">
+    <value>このアプリケーションのプロジェクトURLを開く</value>
+  </data>
+  <data name="MessageStatusExaminationTargetEmpty" xml:space="preserve">
+    <value>調査対象が設定されていません｡</value>
+  </data>
+  <data name="MessageStatusExaminationFileEmpty" xml:space="preserve">
+    <value>調査ファイルが指定されていません｡</value>
+  </data>
+  <data name="MessageStatusAlreadyExamination" xml:space="preserve">
+    <value>準備が完了しました｡｢調査実施｣ボタン押下で検査を行います｡</value>
+  </data>
+  <data name="MessageStatusNowExamination" xml:space="preserve">
+    <value>調査を行っています｡({0}/{1})</value>
+  </data>
+  <data name="MessageStatusCompleteExamination" xml:space="preserve">
+    <value>調査が完了しました｡</value>
+  </data>
+</root>
