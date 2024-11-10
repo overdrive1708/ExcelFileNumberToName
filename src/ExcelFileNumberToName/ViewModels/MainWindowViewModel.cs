@@ -263,7 +263,8 @@ namespace ExcelFileNumberToName.ViewModels
         /// </summary>
         private void ExecuteCommandPresetChange()
         {
-
+            // 調査設定の反映(選択したプリセットリスト)
+            LoadExaminationSettings(Preset);
         }
 
         /// <summary>
