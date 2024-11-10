@@ -2,6 +2,7 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -228,7 +229,33 @@ namespace ExcelFileNumberToName.ViewModels
         /// </summary>
         public MainWindowViewModel()
         {
+            Assembly assm = Assembly.GetExecutingAssembly();
+            string version = assm.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
 
+            // バージョン情報を取得してタイトルに反映する
+            Title = $"{Resources.Strings.ApplicationName} Ver.{version}";
+
+            // コピーライト情報を取得して設定する
+            Copyright = assm.GetCustomAttribute<AssemblyCopyrightAttribute>().Copyright;
+
+            // 設定ファイルの読み込み
+            // (XAMLデザイナーのエラー対策でデザインモードではない場合のみ)
+            if (!(bool)System.ComponentModel.DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(DependencyObject)).DefaultValue)
+            {
+                NumToNameSetting.Read();
+            }
+
+            // プリセット(リスト)の反映
+            PresetList = new(NumToNameSetting.GetPresetList());
+
+            // 調査設定の反映(プリセットリスト先頭)
+            if (PresetList.Count != 0)
+            {
+                LoadExaminationSettings(PresetList[0]);
+            }
+
+            // 調査実施できるか確認
+            CheckExecuteExamination();
         }
 
         /// <summary>
@@ -283,6 +310,54 @@ namespace ExcelFileNumberToName.ViewModels
         private void ExecuteCommandOpenUrl(string url)
         {
 
+        }
+
+        /// <summary>
+        /// 調査設定反映処理
+        /// </summary>
+        /// <param name="presetName">プリセット名</param>
+        private void LoadExaminationSettings(string presetName)
+        {
+            // プリセット取得
+            NumToNameSetting.Setting setting = NumToNameSetting.GetPreset(presetName);
+
+            // プリセット(選択状態)に反映
+            Preset = presetName;
+
+            // 調査ファイルキーワードに反映
+            ExaminationFileKeyword = setting.ExaminationFileKeyword;
+
+            // 調査対象(リスト)に反映
+            ExaminationTargetList = new(setting.ExaminationTargets);
+
+            // 調査実施できるか確認
+            CheckExecuteExamination();
+        }
+
+        /// <summary>
+        /// 調査実施可否確認処理
+        /// </summary>
+        private void CheckExecuteExamination()
+        {
+            if (ExaminationTargetList.Count == 0)
+            {
+                // 調査対象の設定がない場合は調査実施不可
+                IsOperationEnable = false;
+                ProgressMessage = Resources.Strings.MessageStatusExaminationTargetEmpty;
+            }
+            else if (ExaminationFileList.Count == 0)
+            {
+                // 調査ファイルがない場合は調査実施不可
+                IsOperationEnable = false;
+                ProgressMessage = Resources.Strings.MessageStatusExaminationFileEmpty;
+            }
+            else
+            {
+                // チェック通過時調査実施可能
+                IsOperationEnable = true;
+                ProgressMessage = Resources.Strings.MessageStatusAlreadyExamination;
+                ExaminationFileGuideVisibility = false;
+            }
         }
     }
 }

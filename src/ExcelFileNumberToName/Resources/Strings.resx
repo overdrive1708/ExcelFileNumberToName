@@ -158,4 +158,13 @@
   <data name="MessageOpenProjectUrl" xml:space="preserve">
     <value>このアプリケーションのプロジェクトURLを開く</value>
   </data>
+  <data name="MessageStatusExaminationTargetEmpty" xml:space="preserve">
+    <value>調査対象が設定されていません｡</value>
+  </data>
+  <data name="MessageStatusExaminationFileEmpty" xml:space="preserve">
+    <value>調査ファイルが指定されていません｡</value>
+  </data>
+  <data name="MessageStatusAlreadyExamination" xml:space="preserve">
+    <value>準備が完了しました｡｢調査実施｣ボタン押下で検査を行います｡</value>
+  </data>
 </root>

@@ -200,6 +200,33 @@ namespace ExcelFileNumberToName.Resources {
         }
         
         /// <summary>
+        ///   準備が完了しました｡｢調査実施｣ボタン押下で検査を行います｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusAlreadyExamination {
+            get {
+                return ResourceManager.GetString("MessageStatusAlreadyExamination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査ファイルが指定されていません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusExaminationFileEmpty {
+            get {
+                return ResourceManager.GetString("MessageStatusExaminationFileEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査対象が設定されていません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusExaminationTargetEmpty {
+            get {
+                return ResourceManager.GetString("MessageStatusExaminationTargetEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   名称 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Name {
