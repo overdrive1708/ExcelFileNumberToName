@@ -209,6 +209,15 @@ namespace ExcelFileNumberToName.Resources {
         }
         
         /// <summary>
+        ///   調査が完了しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteExamination {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteExamination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   調査ファイルが指定されていません｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusExaminationFileEmpty {
@@ -223,6 +232,15 @@ namespace ExcelFileNumberToName.Resources {
         public static string MessageStatusExaminationTargetEmpty {
             get {
                 return ResourceManager.GetString("MessageStatusExaminationTargetEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査を行っています｡({0}/{1}) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowExamination {
+            get {
+                return ResourceManager.GetString("MessageStatusNowExamination", resourceCulture);
             }
         }
         

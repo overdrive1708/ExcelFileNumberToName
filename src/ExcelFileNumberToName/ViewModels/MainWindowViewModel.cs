@@ -1,6 +1,7 @@
 ﻿using ExcelFileNumberToName.Models;
 using Prism.Commands;
 using Prism.Mvvm;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Reflection;
@@ -11,45 +12,6 @@ namespace ExcelFileNumberToName.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        //--------------------------------------------------
-        // クラス
-        //--------------------------------------------------
-        /// <summary>
-        /// 調査結果クラス
-        /// </summary>
-        public class ExaminationResult
-        {
-            /// <summary>
-            /// ファイル
-            /// </summary>
-            public string File { get; set; } = string.Empty;
-
-            /// <summary>
-            /// シート
-            /// </summary>
-            public string Sheet { get; set; } = string.Empty;
-
-            /// <summary>
-            /// セル
-            /// </summary>
-            public string Cell { get; set; } = string.Empty;
-
-            /// <summary>
-            /// メモ
-            /// </summary>
-            public string Memo { get; set; } = string.Empty;
-
-            /// <summary>
-            /// 数値
-            /// </summary>
-            public string Number { get; set; } = string.Empty;
-
-            /// <summary>
-            /// 名称
-            /// </summary>
-            public string Name { get; set; } = string.Empty;
-        }
-
         //--------------------------------------------------
         // バインディングデータ
         //--------------------------------------------------
@@ -136,8 +98,8 @@ namespace ExcelFileNumberToName.ViewModels
         /// <summary>
         /// 調査結果(リスト)
         /// </summary>
-        private ObservableCollection<ExaminationResult> _examinationResultList = [];
-        public ObservableCollection<ExaminationResult> ExaminationResultList
+        private ObservableCollection<NumToNameFile.ExaminationResult> _examinationResultList = [];
+        public ObservableCollection<NumToNameFile.ExaminationResult> ExaminationResultList
         {
             get { return _examinationResultList; }
             set { SetProperty(ref _examinationResultList, value); }
@@ -246,6 +208,9 @@ namespace ExcelFileNumberToName.ViewModels
                 NumToNameSetting.Read();
             }
 
+            // 変換ルールの読み込み
+            NumToNameRule.Read();
+
             // プリセット(リスト)の反映
             PresetList = new(NumToNameSetting.GetPresetList());
 
@@ -337,10 +302,35 @@ namespace ExcelFileNumberToName.ViewModels
         /// </summary>
         private async void ExecuteCommandExamination()
         {
+            List<NumToNameFile.ExaminationResult> examinationResultList = [];
+            List<NumToNameSetting.ExaminationTarget> examinationTargetList = new(ExaminationTargetList);
+
+            // 調査開始
+            ExaminationResultList.Clear();
+            ProgressMaximum = ExaminationFileList.Count;
+            ProgressValue = 0;
+            IsOperationEnable = false;
+            ProgressMessage = string.Format(Resources.Strings.MessageStatusNowExamination, ProgressValue, ProgressMaximum);
+
+            // 調査実施
             await Task.Run(() =>
             {
-
+                foreach (string file in ExaminationFileList)
+                {
+                    List<NumToNameFile.ExaminationResult> examinationResults = NumToNameFile.GetExaminationResult(file, examinationTargetList);
+                    foreach (NumToNameFile.ExaminationResult examinationResult in examinationResults)
+                    {
+                        examinationResultList.Add(examinationResult);
+                    }
+                    ProgressValue++;
+                    ProgressMessage = string.Format(Resources.Strings.MessageStatusNowExamination, ProgressValue, ProgressMaximum);
+                }
             });
+
+            // 調査完了
+            ExaminationResultList = new(examinationResultList);
+            IsOperationEnable = true;
+            ProgressMessage = Resources.Strings.MessageStatusCompleteExamination;
         }
 
         /// <summary>
