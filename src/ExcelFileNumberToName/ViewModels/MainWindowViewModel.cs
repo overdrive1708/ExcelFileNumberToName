@@ -273,7 +273,9 @@ namespace ExcelFileNumberToName.ViewModels
         /// <param name="e">イベントデータ</param>
         private void ExecuteCommandExaminationFilePreviewDragOver(DragEventArgs e)
         {
-
+            // ドラッグしてきたデータがファイルの場合､ドロップを許可する｡
+            e.Effects = DragDropEffects.Copy;
+            e.Handled = e.Data.GetDataPresent(DataFormats.FileDrop);
         }
 
         /// <summary>
@@ -282,7 +284,38 @@ namespace ExcelFileNumberToName.ViewModels
         /// <param name="e">イベントデータ</param>
         private void ExecuteCommandExaminationFileDrop(DragEventArgs e)
         {
+            // ドロップしてきたデータを解析する
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
+            {
+                foreach (string dropitem in dropitems)
+                {
+                    if (System.IO.Directory.Exists(dropitem))
+                    {
+                        // フォルダの場合は配下の調査ファイルキーワードを含むサポートExcelファイルを調査ファイルのリストに追加
+                        if (System.IO.Directory.GetFiles(@dropitem, "*", System.IO.SearchOption.AllDirectories) is string[] files)
+                        {
+                            foreach (string file in files)
+                            {
+                                if (System.IO.Path.GetFileName(file).Contains(ExaminationFileKeyword) && (System.IO.Path.GetExtension(file) == ".xlsx" || System.IO.Path.GetExtension(file) == ".xlsm"))
+                                {
+                                    ExaminationFileList.Add(file);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // ファイルの場合は調査ファイルキーワードを含むサポートExcelファイルを調査ファイルのリストに追加
+                        if (System.IO.Path.GetFileName(dropitem).Contains(ExaminationFileKeyword) && (System.IO.Path.GetExtension(dropitem) == ".xlsx" || System.IO.Path.GetExtension(dropitem) == ".xlsm"))
+                        {
+                            ExaminationFileList.Add(dropitem);
+                        }
+                    }
+                }
+            }
 
+            // 調査実施できるか確認
+            CheckExecuteExamination();
         }
 
         /// <summary>
@@ -290,7 +323,12 @@ namespace ExcelFileNumberToName.ViewModels
         /// </summary>
         private void ExecuteCommandClearExaminationFile()
         {
+            // 調査ファイルリストをクリア
+            ExaminationFileList.Clear();
+            ExaminationFileGuideVisibility = true;
 
+            // 調査実施できるか確認
+            CheckExecuteExamination();
         }
 
         /// <summary>
