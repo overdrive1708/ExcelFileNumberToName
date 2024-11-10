@@ -2,6 +2,7 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
@@ -348,7 +349,8 @@ namespace ExcelFileNumberToName.ViewModels
         /// <param name="url">URL</param>
         private void ExecuteCommandOpenUrl(string url)
         {
-
+            ProcessStartInfo psi = new() { FileName = url, UseShellExecute = true };
+            _ = Process.Start(psi);
         }
 
         /// <summary>
