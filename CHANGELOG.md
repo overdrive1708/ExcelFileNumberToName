@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Bug fix.([Issue #6](https://github.com/overdrive1708/ExcelFileNumberToName/issues/6))
+
 ## [1.0.0] - 2024-11-10
 
 ### Added
