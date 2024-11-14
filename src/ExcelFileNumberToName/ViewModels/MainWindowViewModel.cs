@@ -262,6 +262,12 @@ namespace ExcelFileNumberToName.ViewModels
                         {
                             foreach (string file in files)
                             {
+                                if (System.IO.Path.GetFileName(file).StartsWith("~$"))
+                                {
+                                    // 一時ファイルは追加しない
+                                    continue;
+                                }
+
                                 if (System.IO.Path.GetFileName(file).Contains(ExaminationFileKeyword) && (System.IO.Path.GetExtension(file) == ".xlsx" || System.IO.Path.GetExtension(file) == ".xlsm"))
                                 {
                                     ExaminationFileList.Add(file);
@@ -271,6 +277,12 @@ namespace ExcelFileNumberToName.ViewModels
                     }
                     else
                     {
+                        if (System.IO.Path.GetFileName(dropitem).StartsWith("~$"))
+                        {
+                            // 一時ファイルは追加しない
+                            continue;
+                        }
+
                         // ファイルの場合は調査ファイルキーワードを含むサポートExcelファイルを調査ファイルのリストに追加
                         if (System.IO.Path.GetFileName(dropitem).Contains(ExaminationFileKeyword) && (System.IO.Path.GetExtension(dropitem) == ".xlsx" || System.IO.Path.GetExtension(dropitem) == ".xlsm"))
                         {
